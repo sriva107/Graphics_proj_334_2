@@ -1,0 +1,39 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
+    <ClCompile Include="src\OBJLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\Shader.h" />
+    <ClInclude Include="include\Model.h" />
+    <ClInclude Include="include\Mesh.h" />
+    <ClInclude Include="include\OBJLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\model.vert" />
+    <None Include="assets\shaders\model.frag" />
+    <None Include="assets\shaders\edge.geom" />
+    <None Include="assets\models\teapot.obj" />
+    <None Include="assets\models\bunny.obj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <IncludePath>include;external\glm;$(IncludePath)</IncludePath>
+    <OutDir>bin\</OutDir>
+    <IntDir>intermediate\</IntDir>
+    <TargetName>FreeGLUT_Contour_Project</TargetName>
+    <TargetExtension>.exe</TargetExtension>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>include;external\glm</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;freeglut.lib;glew32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>
